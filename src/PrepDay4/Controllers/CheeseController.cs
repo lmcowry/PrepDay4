@@ -10,13 +10,13 @@ namespace PrepDay4.Controllers
 {
     public class CheeseController : Controller
     {
-        static private List<string> Cheeses = new List<string>();
+        static private Dictionary<string, string> CheesesDict = new Dictionary<string, string>();
 
         // GET: /<controller>/
         public IActionResult Index()
         {
 
-            ViewBag.cheeses = Cheeses;
+            ViewBag.cheeses = CheesesDict;
 
             return View();
         }
@@ -28,10 +28,10 @@ namespace PrepDay4.Controllers
 
         [HttpPost]
         [Route("/Cheese/Add")]
-        public IActionResult NewCheese(string name)
+        public IActionResult NewCheese(string cheeseName, string cheeseDescription)
         {
             // Add the new cheese to my existing 
-            Cheeses.Add(name);
+            CheesesDict.Add(cheeseName, cheeseDescription);
 
             return Redirect("/Cheese");
 

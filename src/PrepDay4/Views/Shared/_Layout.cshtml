@@ -27,13 +27,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">PrepDay4</a>
+                <!-- changing these from Home to Cheese-->
+                <a asp-area="" asp-controller="Cheese" asp-action="Index" class="navbar-brand">PrepDay4</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <!-- changing these from Home to Cheese, and then About to Add-->
+                    <!-- got rid of this line at the bottom <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li> -->
+                    <li><a asp-area="" asp-controller="Cheese" asp-action="Index">Home</a></li>
+                    <li><a asp-area="" asp-controller="Cheese" asp-action="Add">Add</a></li>
                 </ul>
             </div>
         </div>
