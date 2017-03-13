@@ -1,0 +1,17 @@
+﻿<h1>My Cheese Delete Page</h1>
+
+<p><a asp-controller="Cheese" asp-action="Delete">Delete Cheese</a></p>
+
+@if (ViewBag.cheeses.Count == 0)
+{
+    <p>No cheeses yet!</p>
+}
+
+
+    <form method="post">
+    @foreach (KeyValuePair<string, string> cheese in ViewBag.cheeses)
+    {
+        <div>@cheese.Key - @cheese.Value <input type="checkbox" name="cheeseName" value="@cheese.Key"/></div>
+    }
+        <button type="submit" value="submit">Submit</button>
+        </form>

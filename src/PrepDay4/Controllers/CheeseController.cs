@@ -26,6 +26,12 @@ namespace PrepDay4.Controllers
             return View();
         }
 
+        public IActionResult Delete()
+        {
+            ViewBag.cheeses = CheesesDict;
+            return View();
+        }
+
         [HttpPost]
         [Route("/Cheese/Add")]
         public IActionResult NewCheese(string cheeseName, string cheeseDescription)
@@ -35,6 +41,16 @@ namespace PrepDay4.Controllers
 
             return Redirect("/Cheese");
 
+        }
+        [HttpPost]
+        [Route("/Cheese/Delete")]
+        public IActionResult DeleteCheese(string[] cheeseName)
+        {
+            foreach (string cheese in cheeseName)
+            {
+                CheesesDict.Remove(cheese);
+            }
+            return Redirect("/Cheese");
         }
     }
 }
